@@ -1,7 +1,7 @@
 
 birthdays = {'Fati': 'Sep 1', 'Panke': 'Jan 5'}
 
-while 1 == 1:
+while True:
     print('\nEnter a name: (Blank to quit)')
     name = str(input())
     if name == '':
