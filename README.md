@@ -44,7 +44,7 @@ I am studying data science as my major, and learning Python is essential for my 
 
 ## How to Use This Repository
 
-1. **Clone the repository**: `git clone https://github.com/yourusername/python-self-learning-journey.git`
+1. **Clone the repository**: `git clone https://github.com/Pinedah/ATBSWP.git`
 2. **Navigate to the desired chapter or project**: Each chapter and project is in its own directory.
 3. **Run the code**: Follow the instructions in the `README.md` files within each directory to run the code examples and projects.
 
