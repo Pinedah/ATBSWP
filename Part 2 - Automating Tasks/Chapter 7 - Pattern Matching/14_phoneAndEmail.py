@@ -1,16 +1,16 @@
 #! python3
 # 14_phoneAndEmail.py - Finds phone numbers and email addresses on the clipboard
 
-import re, pyperclip
+import re, pyperclip, pprint
 
 # phone Regex 
 phoneRegex = re.compile(r'''(
-    (\d{3}|\(\d{3}\))?                # area code
-    (\s|-|\.)?                        # separator
-    (\d{3})                           # first 3 digits
-    (\s|-|\.)                         # separator
-    (\d{4})                           # last 4 digits
-    (\s*(ext|x|ext.)\s*(\d{2,5}))?    # extension
+    (\d{3}|\(\d{3}\))?                # area code [1]
+    (\s|-|\.)?                        # separator [2]
+    (\d{3})                           # first 3 digits [3]
+    (\s|-|\.)                         # separator [4]
+    (\d{4})                           # last 4 digits [5]
+    (\s*(ext|x|ext.)\s*(\d{2,5}))?    # extension [6] [7] [8]
 )''', re.VERBOSE)
 
 # TODO: Create email regex
@@ -24,15 +24,29 @@ emailRegex = re.compile(r'''(
 # TODO: Find matches in the clipboard text
 text = str(pyperclip.paste())
 matches = []
+
+# printing the data 
+pprint.pprint((phoneRegex.findall(text)))
+pprint.pprint(emailRegex.findall(text))
+#
+
 for groups in phoneRegex.findall(text):
-    phoneNum = '-'.join(groups[1], groups[3], groups[5])
+    # group[0] -> the entire phone number
+    phoneNum = '-'.join([groups[1], groups[3], groups[5]])
     if(groups[8] != ''):
         phoneNum += ' x' + groups[8]
     matches.append(phoneNum)
+    # final format: 123-123-1234 x12345 or (123)-123-1234 x1234
 
 for groups in emailRegex.findall(text):
     matches.append(groups[0])
 
 
 # TODO: Copy results to the clipboard
+if len(matches) > 0:
+    pyperclip.copy('\n'.join(matches))
+    print('\nCopied to clipboard:')
+    print('\n'.join(matches))
+else:
+    print('\nNo phone numbers or email addresses found...')
 
