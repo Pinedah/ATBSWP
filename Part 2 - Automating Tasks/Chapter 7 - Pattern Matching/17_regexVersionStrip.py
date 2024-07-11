@@ -25,7 +25,6 @@ def regexStrip(string, otherA):
                 return ''.join(fa)
             else:
                 return string
-
     
 print(regexStrip('xxxxxxPankesito Rexxxxxxxxxx', 'x'))
 print(regexStrip('xxxxxxPankesito Rexxxxxxxxxx', ''))
