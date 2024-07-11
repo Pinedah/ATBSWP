@@ -3,7 +3,7 @@
 
 import re
 
-robocop = re.compile(r'robocop', re.I)
+robocop = re.compile(r'robocop', re.IGNORECASE)
 
 rc1 = robocop.search('RoboCop is part man, part machine, all cop.')
 print(rc1.group())
