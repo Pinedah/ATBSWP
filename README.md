@@ -56,7 +56,7 @@ I am studying data science as my major, and learning Python is essential for my 
 ## Contact
 
 For any questions or suggestions, feel free to contact me at [pinedah2005@gmail.com](mailto:pinedah2005@gmail.com).
-... or feel free to follow me at: [@pinedah_11].(https://www.instagram.com/pinedah_11/)
+... or feel free to follow me at: @pinedah_11]
 
 Happy Learning!
 
