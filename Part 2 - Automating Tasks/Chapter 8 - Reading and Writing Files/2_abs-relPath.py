@@ -3,6 +3,8 @@
 
 import os
 
+# ! did't get this (?)
+
 print()
 print(os.path.abspath('.'))
 
