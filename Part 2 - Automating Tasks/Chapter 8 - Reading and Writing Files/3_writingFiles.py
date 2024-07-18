@@ -11,3 +11,19 @@
 """
 
 baconFile = open('.\\3_files\\bacon.txt', 'w')
+baconFile.write('Pankesito!\n')
+baconFile.close()
+# this will replace the content in bacon.txt for Pankesito!\n
+
+
+baconFile = open('.\\3_files\\bacon.txt', 'a') # append mode
+baconFile.write('Pankesito is not a bread.')
+baconFile.close()
+
+
+baconFile = open('.\\3_files\\bacon.txt') # read mode
+content = baconFile.read()
+baconFile.close()
+
+print(content)
+
