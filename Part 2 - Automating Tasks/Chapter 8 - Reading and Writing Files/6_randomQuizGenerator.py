@@ -1,4 +1,4 @@
-#! python 3
+#! python3
 # randomQuizGenerator.py - Creates quizzes with questions and answars in 
 # random order, along with the answer key
 
@@ -41,7 +41,7 @@ for quizNum in range(3):
         quizFile.write('\n')
 
         # TODO: Write the answer key to a file
-        answearKeyFile.write('%s. %s\n' % (questionNum + 1), 'ABCD'[answearOptions.index(correctAnswear)])
+        answearKeyFile.write('%s. %s\n' % (questionNum + 1, 'ABCD'[answearOptions.index(correctAnswear)]))
 
 quizFile.close()
 answearKeyFile.close()
