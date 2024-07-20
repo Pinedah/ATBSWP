@@ -41,7 +41,8 @@ for quizNum in range(3):
         quizFile.write('\n')
 
         # TODO: Write the answer key to a file
-        answearKeyFile.write('%s. %s\n' % (questionNum + 1, 'ABCD'[answearOptions.index(correctAnswear)])) # take the correct option for each question
+        answearKeyFile.write('%s. %s\n' % (questionNum + 1, 'ABCD'[answearOptions.index(correctAnswear)])) # take the correct option for each question 
+        # .index("string") -> returns the index where is the correct one
 
 quizFile.close()
 answearKeyFile.close()
