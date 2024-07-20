@@ -34,14 +34,14 @@ for quizNum in range(3):
         random.shuffle(answearOptions)
 
         # TODO: Write the question and aswear option to the quiz file
-        quizFile.write('%s. What is the capital of %s?\n' % (questionNum + 1, states[questionNum]))
+        quizFile.write('%s. What is the capital of %s?\n' % (questionNum + 1, states[questionNum])) # make the question
 
         for i in range(4):
             quizFile.write('    %s. %s\n' % ('ABCD'[i], answearOptions[i])) # pick the letter for the options 
         quizFile.write('\n')
 
         # TODO: Write the answer key to a file
-        answearKeyFile.write('%s. %s\n' % (questionNum + 1, 'ABCD'[answearOptions.index(correctAnswear)]))
+        answearKeyFile.write('%s. %s\n' % (questionNum + 1, 'ABCD'[answearOptions.index(correctAnswear)])) # take the correct option for each question
 
 quizFile.close()
 answearKeyFile.close()
