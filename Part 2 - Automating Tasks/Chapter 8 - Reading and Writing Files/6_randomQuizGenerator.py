@@ -29,7 +29,7 @@ for quizNum in range(3):
         correctAnswear = capitals[states[questionNum]]
         wrongAnswears = list(capitals.values())
         del wrongAnswears[wrongAnswears.index(correctAnswear)] # delete the correc option from the list of the wrong ones
-        wrongAnswears = random.sample(wrongAnswears, 3)
+        wrongAnswears = random.sample(wrongAnswears, 3) # sample takes a list and chooses 3 elements of them randomly
         answearOptions = wrongAnswears + [correctAnswear]
         random.shuffle(answearOptions)
 
