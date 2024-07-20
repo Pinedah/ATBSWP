@@ -30,7 +30,7 @@ for quizNum in range(3):
         wrongAnswears = list(capitals.values())
         del wrongAnswears[wrongAnswears.index(correctAnswear)] # delete the correc option from the list of the wrong ones
         wrongAnswears = random.sample(wrongAnswears, 3) # sample takes a list and chooses 3 elements of them randomly
-        answearOptions = wrongAnswears + [correctAnswear]
+        answearOptions = wrongAnswears + [correctAnswear] # use [] to concatate lists
         random.shuffle(answearOptions)
 
         # TODO: Write the question and aswear option to the quiz file
