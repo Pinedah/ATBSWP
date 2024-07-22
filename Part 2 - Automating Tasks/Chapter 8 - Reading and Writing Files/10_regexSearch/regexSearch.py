@@ -10,12 +10,17 @@ userRegex = re.compile(input)
 # TODO: Access to every file in a folder
 folder = 'C:\\Users\\Dell Latitude\\Documents\\GitHub\\ATBSWP\\Part 2 - Automating Tasks\\Chapter 8 - Reading and Writing Files\\10_regexSearch\\files'
 
+filenames = ['']
 if os.path.exists(folder):
-    files = os.listdir(folder)
-    print(files)
+    filenames = os.listdir(folder)
+    print(filenames)
 
-# TODO: Read LINES in every file in a folder
+# TODO: Create file objects
+files = []
+for name in filenames:
+    files.append(open(folder + '\\' + name, 'r'))
 
+# TODO: Read files
 
 
 # TODO: Look for the lines that matches with the regex
