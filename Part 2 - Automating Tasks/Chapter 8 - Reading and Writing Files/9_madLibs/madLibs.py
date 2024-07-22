@@ -1,21 +1,21 @@
 #! python3 
 # madLibs.py - Lets the user add their own text anywhere the word ADJECTIVE, NOUN, ADVERB or VERB  appears in a text file.
 
+wordsToReplace = ['ADJECTIVE', 'NOUN', 'VERB', 'ADVERB']
+
 madInput = open('input.txt', 'r')
 madOutput = open('output.txt', 'w')
 
-phrase = madInput.read()
-words = phrase.split()
+madContent = madInput.read() # read the text file
+fileWords = madContent.split() # split each word in a list
 
-if not('ADJECTIVE' in words or 'NOUN' in words or 'ADVERB' in words or 'VERB' in words):
-    print("There is no such words in input")
-else:
-    words[words.index('ADJECTIVE')] = str(input('Enter an adjective:'))
-    words[words.index('NOUN')] = str(input('Enter a noun:'))
-    words[words.index('ADVERB')] = str(input('Enter an adverb:'))
-    words[words.index('VERB')] = str(input('Enter a verb:'))
+for madWord in fileWords:
+    for repWord in wordsToReplace:
+        if repWord in madWord: # look for the coincidence in the strings
+            userWord = str(input(f'Enter your {repWord}: ')) # read the users new word
+            replacedWord = fileWords[fileWords.index(madWord)].replace(repWord, userWord) # replace it in the specific element of the phrase (this prevents the . ! ? or any other sign)
+            fileWords[fileWords.index(madWord)] = replacedWord # put the replacedWord again in the original list of the input
 
-    newPhrase = ' '.join(words)
-    print('\nThe bew phrase is:\n' + newPhrase)
-    madOutput.write(newPhrase)
-
+newPhrase = ' '.join(fileWords)
+print(newPhrase)
+madOutput.write(newPhrase)
