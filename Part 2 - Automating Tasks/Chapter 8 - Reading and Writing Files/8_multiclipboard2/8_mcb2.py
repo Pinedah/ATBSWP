@@ -35,6 +35,7 @@ elif len(sys.argv) == 2:
 
     elif sys.argv[1] in mcbShelf:
         pyperclip.copy(mcbShelf[sys.argv[1]])
+        print(sys.argv[1] + ' succesfully copied to clipboard. :)')
 
     else:
         print("--not in mcbShelf :(")
