@@ -19,6 +19,7 @@ if len(sys.argv) == 3 and sys.argv[1].lower() == 'save':
     mcbShelf[sys.argv[2]] = pyperclip.paste()
     print(sys.argv[2] + ' saved. :)')
 
+# Delete an specific keyword
 elif len(sys.argv) == 3 and sys.argv[1].lower() == 'delete':
     del mcbShelf[sys.argv[2]]
     print(sys.argv[2] + ' has been deleted.')
@@ -28,15 +29,18 @@ elif len(sys.argv) == 2:
     if sys.argv[1].lower() == 'list':
         pyperclip.copy(str(list(mcbShelf.keys()))) # needed to cast to list()
 
+    # Delete all the keywords
     elif sys.argv[1].lower() == 'delete':
         for keywords in list(mcbShelf.keys()):
             del mcbShelf[keywords]
         print('--all keywords deleted.')
 
+    # Copy content for the keyword given 
     elif sys.argv[1] in mcbShelf:
         pyperclip.copy(mcbShelf[sys.argv[1]])
         print(sys.argv[1] + ' succesfully copied to clipboard. :)')
 
+    # Keyword not in the DB
     else:
         print("--not in mcbShelf :(")
  
