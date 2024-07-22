@@ -3,30 +3,34 @@
 
 import re, os, pprint
 
-# TODO: User enter the regex
+folder = 'C:\\Users\\Dell Latitude\\Documents\\GitHub\\ATBSWP\\Part 2 - Automating Tasks\\Chapter 8 - Reading and Writing Files\\10_regexSearch\\files'
+
+# User enter the regex
 input = str(input('Enter your regex: '))
 userRegex = re.compile(input)
 
-# TODO: Access to every file in a folder
-folder = 'C:\\Users\\Dell Latitude\\Documents\\GitHub\\ATBSWP\\Part 2 - Automating Tasks\\Chapter 8 - Reading and Writing Files\\10_regexSearch\\files'
-
+# Access to every file in a folder
 filenames = []
 if os.path.exists(folder):
     filenames = os.listdir(folder)
     print(filenames)
 
-# TODO: Create file objects
+# Create file objects
 files = []
 for name in filenames:
     files.append(open(folder + '\\' + name, 'r'))
 
-# TODO: Read files
+# Read files
 filesContents = []
 for file in files:
-    filesContents.append(file.readlines())
+    filesContents += file.readlines()
 pprint.pprint(filesContents)
 
-# TODO: Look for the lines that matches with the regex
-
-
+# Look for the lines that matches with the regex
+matches = []
+for line in filesContents:
+    if userRegex.search(line):
+        matches.append(line)
+        
 # TODO: Print the results
+print('\n' + str(matches))
