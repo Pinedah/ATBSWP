@@ -25,9 +25,9 @@ def backupToZip(folder):
     backupZip = zipfile.ZipFile(zipFilename, 'w')
 
     # Walk the entire folder tree and compress the files in each folder
-    pprint.pprint(list(os.walk(folder)))
+    # pprint.pprint(list(os.walk(folder)))
     for foldername, subfolders, filenames in os.walk(folder):
-        #print(f'Adding diles in {foldername}')
+        print(f'Adding diles in {foldername}')
             
         # Add the current folder to the ZIP file.
         backupZip.write(foldername)
