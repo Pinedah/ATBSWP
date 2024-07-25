@@ -7,12 +7,15 @@ def backupToZip(folder):
     # Backup the entire contents of "folder" into a ZIP file.
 
     folder = os.path.abspath(folder) # make sure folder is absolute
+    
+    print(folder)
 
     # Figure ot the filename this code should use based on what files already exists
     number = 1
     
     while True:
         zipFilename = os.path.basename(folder) + '_' + str(number) + '.zip'
+        print(zipFilename)
         if not os.path.exists(zipFilename):
             break
         number += 1
@@ -36,5 +39,6 @@ def backupToZip(folder):
                 backupZip.write(os.path.join(foldername, filename))
         backupZip.close()
     print('Done.')
+
 
 backupToZip('2_delicious')
