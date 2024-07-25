@@ -1,4 +1,4 @@
-#! python2 
+#! python3 
 # 5_backupToZip.py - Copies an entire folder and its contents into a ZIP file whose filename increments.
 
 import zipfile, os
@@ -9,7 +9,6 @@ def backupToZip(folder):
     folder = os.path.abspath(folder) # make sure folder is absolute
 
     # Figure ot the filename this code should use based on what files already exists
-
     number = 1
     
     while True:
@@ -18,9 +17,11 @@ def backupToZip(folder):
             break
         number += 1
 
-    # TODO: Create the ZIP file
-
-    # TODO: Walk the entire folder tree and compress the files in each folder 
+        # Create the ZIP file
+        print(f'Creating {zipFilename}...')
+        backupZip = zipfile.ZipFile(zipFilename, 'w')
+        
+        # TODO: Walk the entire folder tree and compress the files in each folder 
 
     print('Done.')
 
