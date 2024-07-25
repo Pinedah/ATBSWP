@@ -1,7 +1,7 @@
 #! python3 
 # 5_backupToZip.py - Copies an entire folder and its contents into a ZIP file whose filename increments.
 
-import zipfile, os
+import zipfile, os, pprint
 
 def backupToZip(folder):
     # Backup the entire contents of "folder" into a ZIP file.
@@ -20,24 +20,26 @@ def backupToZip(folder):
             break
         number += 1
 
-        # Create the ZIP file
-        print(f'Creating {zipFilename}...')
-        backupZip = zipfile.ZipFile(zipFilename, 'w')
+    # Create the ZIP file
+    print(f'Creating {zipFilename}...')
+    backupZip = zipfile.ZipFile(zipFilename, 'w')
 
-        # Walk the entire folder tree and compress the files in each folder 
-        for foldername, subfolders, filenames in os.walk(folder):
-            print(f'Adding diles in {foldername}')
+    # Walk the entire folder tree and compress the files in each folder
+    pprint.pprint(list(os.walk(folder)))
+    for foldername, subfolders, filenames in os.walk(folder):
+        #print(f'Adding diles in {foldername}')
             
-            # Add the current folder to the ZIP file.
-            backupZip.write(foldername)
+        # Add the current folder to the ZIP file.
+        backupZip.write(foldername)
 
-            # Add all the files in this folder to the ZIP file.
-            for filename in filenames:
-                newBase = os.path.basename(folder) + '_'
-                if filename.startswith(newBase) and filename.endswith('.zip'):
-                    continue # don't backup the backup ZIP files
-                backupZip.write(os.path.join(foldername, filename))
-        backupZip.close()
+        # Add all the files in this folder to the ZIP file.
+        for filename in filenames:
+            newBase = os.path.basename(folder) + '_'
+            if filename.startswith(newBase) and filename.endswith('.zip'):
+                continue # don't backup the backup ZIP files
+            backupZip.write(os.path.join(foldername, filename))
+    
+    backupZip.close()
     print('Done.')
 
 
