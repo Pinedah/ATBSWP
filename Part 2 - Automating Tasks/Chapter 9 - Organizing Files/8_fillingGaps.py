@@ -48,9 +48,9 @@ nFiles = []
 
 
 # rename files
-
-
-
+for file in files:
+    shutil.move(os.path.join(dir, file), os.path.join(dir, files[file]))
+    print(f'{os.path.join(dir, file)} renamed as: {files[file]}')
 """
 
 for v in files.values():
