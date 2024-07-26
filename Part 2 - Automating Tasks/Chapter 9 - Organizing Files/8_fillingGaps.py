@@ -17,8 +17,6 @@ for filenumber in files.values():
     if int(filenumber) < min:
         min = int(filenumber)
 
-sortedFiles = {}
-
 filenumbers = []
 for filenumber in files.values():
     filenumbers.append(int(filenumber))
@@ -29,14 +27,9 @@ for number in filenumbers:
     newValues[number] = min
     min += 1
 
-newF = []
 for k, v in files.items():
     if int(v) in list(newValues.keys()):
         files[k] = str(k).replace(v, str(newValues[int(v)]).zfill(3))
-
-
-nFiles = []
-
 
 # rename files
 for file in files:
