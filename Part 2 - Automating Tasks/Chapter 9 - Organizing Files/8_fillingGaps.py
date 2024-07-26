@@ -34,15 +34,22 @@ for number in filenumbers:
     min += 1
 pprint.pprint(newValues)
 
+newF = []
 for k, v in files.items():
     if int(v) in list(newValues.keys()):
-        files[k] = str(newValues[int(v)]).zfill(3)
+        # files[k] = str(newValues[int(v)]).zfill(3)
+        files[k] = str(k).replace(v, str(newValues[int(v)]).zfill(3))
+        # newF.append(str(k).replace(v, str(newValues[int(v)]).zfill(3)))
 
 pprint.pprint(files)
+# print(newF)
+
+nFiles = []
+
 
 # rename files
-for f in files.keys():
-    shutil.copy()
+
+
 
 """
 
