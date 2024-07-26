@@ -18,19 +18,19 @@ if not os.path.exists(newDir):
 toMove = []
 
 # Walk into the directory
-pprint.pprint(list(os.walk(dir)))
-print()
+#pprint.pprint(list(os.walk(dir)))
 
 for folderName, subfolders, filenames in os.walk(dir):
     for filename in filenames:
         if extensionsRegex.match(filename):
             toMove.append(os.path.join(folderName, filename))
             print(f'{filename} -', end='')
-print()
 
 # Move into the new foler
+print()
 pprint.pprint(toMove)
 print()
+
 for file in toMove:
     shutil.copy(file, newDir)
     print(f'{file} copied to {newDir}')
