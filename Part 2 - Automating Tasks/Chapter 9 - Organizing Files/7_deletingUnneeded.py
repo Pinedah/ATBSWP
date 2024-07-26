@@ -3,15 +3,23 @@
 
 import os, pprint, send2trash
 
-maxSize = 100
+maxSize = 5000000
+dir = "C:\\Users\\Dell Latitude\\Documents\\LIBROS"
+dir2 = "C:\\Users\\Dell Latitude\\Documents\\CECyT 3"
+
+
+print()
+#pprint.pprint(list(os.walk(dir)))
+
 
 # Walk the directory
-
-for folderName, subfolders, filenames in os.walk(dir):
+for folderName, subfolders, filenames in os.walk(dir2):
     for filename in filenames:
-
+        file = os.path.join(folderName, filename)
         # Check file size 
-        if os.path.getsize(filename) > maxSize:
-            print(f'{filename} is too big, it will be deleted')
-            send2trash.send2trash(os.path.join(folderName, filename))
+        if os.path.getsize(os.path.join(folderName, filename)) > maxSize:
+            print(f'{filename} is too big, it will be deleted ({os.path.getsize(os.path.join(folderName, filename))})')
+
+            # Send to trash the files that are biggest than the limit
+            # send2trash.send2trash(os.path.join(folderName, filename))
                                   
