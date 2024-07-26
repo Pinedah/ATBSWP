@@ -12,13 +12,13 @@ for file in os.listdir(dir):
     if prefixRegex.match(file):
         files[file] = prefixRegex.match(file).group(3)
 
-pprint.pprint(files)
+#pprint.pprint(files)
 
 min = int(list(files.values())[0])
 for filenumber in files.values():
     if int(filenumber) < min:
         min = int(filenumber)
-print('min:', min)
+#print('min:', min)
 
 sortedFiles = {}
 
@@ -26,13 +26,13 @@ filenumbers = []
 for filenumber in files.values():
     filenumbers.append(int(filenumber))
 filenumbers.sort()
-print(filenumbers)
+#print(filenumbers)
 
 newValues = {}
 for number in filenumbers:
     newValues[number] = min
     min += 1
-pprint.pprint(newValues)
+#pprint.pprint(newValues)
 
 newF = []
 for k, v in files.items():
@@ -41,7 +41,7 @@ for k, v in files.items():
         files[k] = str(k).replace(v, str(newValues[int(v)]).zfill(3))
         # newF.append(str(k).replace(v, str(newValues[int(v)]).zfill(3)))
 
-pprint.pprint(files)
+#pprint.pprint(files)
 # print(newF)
 
 nFiles = []
