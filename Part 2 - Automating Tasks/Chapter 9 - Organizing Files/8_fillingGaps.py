@@ -5,18 +5,22 @@ import os, shutil, pprint, re
 
 dir = "faxinaar"
 
+# define the regex 
 prefixRegex = re.compile(r'^(faxi)(.*?)?(\d{3})(.*?)?(.)(.*?)')
 
+# get the name of all files
 files = {}
 for file in os.listdir(dir):
     if prefixRegex.match(file):
         files[file] = prefixRegex.match(file).group(3)
 
+# look for the smallets number in the files
 min = int(list(files.values())[0])
 for filenumber in files.values():
     if int(filenumber) < min:
         min = int(filenumber)
 
+# sort the files that has matched in order to get it down in the filename
 filenumbers = []
 for filenumber in files.values():
     filenumbers.append(int(filenumber))
