@@ -26,11 +26,13 @@ for filenumber in files.values():
     filenumbers.append(int(filenumber))
 filenumbers.sort()
 
+# look for the new filenumbers
 newValues = {}
 for number in filenumbers:
     newValues[number] = min
     min += 1
 
+# rename the new values
 for k, v in files.items():
     if int(v) in list(newValues.keys()):
         files[k] = str(k).replace(v, str(newValues[int(v)]).zfill(3))
