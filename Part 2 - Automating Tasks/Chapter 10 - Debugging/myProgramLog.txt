@@ -1,0 +1,2 @@
+ 2024-07-29 13:03:01,654 - ERROR - This is an error message that displays in the text file
+ 2024-07-29 13:03:01,655 - WARNING - This is a warning message that displays in the text file
