@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Users\Dell Latitude\Documents\GitHub\ATBSWP\Part 2 - Automating Tasks\Chapter 10 - Debugging\2_tracebackModule.py", line 7, in <module>
+    raise Exception('This is the error message, bruh. :D')
+Exception: This is the error message, bruh. :D
