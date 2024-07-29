@@ -3,7 +3,10 @@
 
 import logging
 
-logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s -  %(message)s')
+logging.basicConfig(level=logging.INFO
+, format=' %(asctime)s - %(levelname)s -  %(message)s')
+# as long as .INFO is passed to level = 
+# only the INFO messages (and the upper categories will be displayed)
 
 logging.debug('Some debugging datails.')
 
