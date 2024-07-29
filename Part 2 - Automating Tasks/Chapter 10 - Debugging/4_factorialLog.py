@@ -5,6 +5,10 @@ import logging
 logging.basicConfig(level = logging.DEBUG, format = '%(asctime)s -  %(levelname)s -   %(message)s')
 # necessary to use the %()s format
 
+# ADD THIS LINE TO DISABLE ALL LOGGING MESSAGES ALL AT ONCE!!
+# logging.disable(logging.CRITICAL)
+
+
 logging.debug('Start of program')
 
 def factorial(n):
