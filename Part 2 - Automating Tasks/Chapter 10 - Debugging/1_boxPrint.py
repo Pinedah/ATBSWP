@@ -19,3 +19,8 @@ for sym, w, h in (('*', 4, 4), ('0', 20, 5), ('x', 1, 3), ('ZZ', 3, 3)):
     except Exception as err:
         print(f'An exception happened, bruh: {err}')
         
+"""
+If an Exception object is returned from boxPrint() uvw, this except statement will store it in a variable named err. The Exception object 
+can then be converted to a string by passing it to str() to produce a user
+friendly error message
+"""
