@@ -12,7 +12,6 @@ assert podBayDoorStatus == 'open', 'The pod bay doors need to be "open".'
 podBayDoorStatus = "I'm sorry, Dave. I'm afraid I can't do that."
 
 
-
 # Assert evaluates again 'open', as long as its false, now displays the AssertionError
 assert podBayDoorStatus == 'open', "AssertionError changed to -> PANKE"
 # change the error message for PANKE
