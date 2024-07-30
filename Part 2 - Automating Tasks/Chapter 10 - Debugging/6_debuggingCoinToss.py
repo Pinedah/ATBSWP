@@ -1,19 +1,34 @@
 #! python3
 # Debugging Coint Toss
 
-import random
+import random, logging
+
+logging.basicConfig(level=logging.DEBUG
+, format=' %(asctime)s - %(levelname)s -  %(message)s')
+logging.disable(logging.CRITICAL)
 
 guess = ''
-while guess not in ('heads', 'tails'):
-    print("Guess the coin toss! Enter heads or tails: ")
-    guess = input()
+cases = ('heads', 'tails') # declare a tuple for the cases
 
-toss = random.randint(0, 1) # 0 is tails, 1 is heads
+while guess not in cases:
+    print("\nGuess the coin toss! Enter heads or tails: ")
+    guess = input().lower() # make it case insensitive
+
+#toss = random.randint(0, 1) # 0 is tails, 1 is heads 
+toss = random.choice(cases) # to make it the random choice in strings
+
+logging.debug(guess)
+logging.debug(toss)
+
 if toss == guess:
     print("You got it!")
 else:
     print("Nope! Guess again!")
-    guess = input()
+    guess = input().lower() # make it case insensitive
+
+    logging.debug(guess)
+    logging.debug(toss)
+
     if toss == guess:
         print('You got it!')
     else:
