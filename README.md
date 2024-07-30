@@ -22,19 +22,17 @@ I am studying data science as my major, and learning Python is essential for my 
 6. **Chapter 5 – Dictionaries and Structuring Data**
 7. **Chapter 6 – Manipulating Strings**
 8. **Chapter 7 – Pattern Matching with Regular Expressions**
-9. **Chapter 8 – Input Validation**
-10. **Chapter 9 – Reading and Writing Files**
-11. **Chapter 10 – Organizing Files**
-12. **Chapter 11 – Debugging**
-13. **Chapter 12 – Web Scraping**
-14. **Chapter 13 – Working with Excel Spreadsheets**
-15. **Chapter 14 – Working with Google Spreadsheets**
-16. **Chapter 15 – Working with PDF and Word Documents**
-17. **Chapter 16 – Working with CSV Files and JSON Data**
-18. **Chapter 17 – Keeping Time, Scheduling Tasks, and Launching Programs**
-19. **Chapter 18 – Sending Email and Text Messages**
-20. **Chapter 19 – Manipulating Images**
-21. **Chapter 20 – Controlling the Keyboard and Mouse with GUI Automation**
+9. **Chapter 8 – Reading and Writing Files**
+10. **Chapter 9 – Organizing Files**
+11. **Chapter 10 – Debugging**
+12. **Chapter 11 – Web Scraping**
+13. **Chapter 12 – Working with Excel Spreadsheets**
+14. **Chapter 13 – Working with PDF and Word Documents**
+15. **Chapter 14 – Working with CSV Files and JSON Data**
+16. **Chapter 15 – Keeping Time, Scheduling Tasks, and Launching Programs**
+17. **Chapter 16 – Sending Email and Text Messages**
+18. **Chapter 17 – Manipulating Images**
+19. **Chapter 18 – Controlling the Keyboard and Mouse with GUI Automation**
 
 ## Repository Contents
 
