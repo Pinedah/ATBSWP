@@ -1,5 +1,5 @@
 #! python3
-# Request Module (needs to be installed)
+# Requests Module (needs to be installed)
 
 import requests
 
