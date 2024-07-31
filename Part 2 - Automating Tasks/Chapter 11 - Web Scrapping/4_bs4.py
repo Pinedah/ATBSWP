@@ -11,6 +11,7 @@ elems = exampleSoup.select('#author')
 
 print()
 
+print(elems)
 print(type(elems))
 print(len(elems))
 print(type(elems[0]))
