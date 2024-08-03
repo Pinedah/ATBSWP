@@ -13,7 +13,7 @@ print()
 
 print("Elems: ")
 print(elems)
-print("Elems: ")
+print("Elems: ", end='')
 print(type(elems))
 print("Elems: ")
 print(len(elems))
