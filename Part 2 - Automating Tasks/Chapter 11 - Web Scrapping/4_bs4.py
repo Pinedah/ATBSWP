@@ -11,7 +11,7 @@ elems = exampleSoup.select('#author')
 
 print()
 
-print("Elems: ")
+print("Elems: ", end='')
 print(elems)
 print("type: ", end='')
 print(type(elems))
