@@ -4,6 +4,7 @@
 import requests, sys, webbrowser, bs4, logging, pprint
 
 logging.basicConfig(level = logging.DEBUG, format = '%(asctime)s -  %(levelname)s -   %(message)s')
+logging.disable(logging.CRITICAL)
 
 print('Googling...') # display text while downloading the Google page
 
