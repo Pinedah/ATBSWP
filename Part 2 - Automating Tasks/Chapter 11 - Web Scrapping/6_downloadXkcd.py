@@ -19,8 +19,16 @@ while not url.endswith('#'):
     soup = bs4.BeautifulSoup(res.text)
 
     # TODO: Find the URL of the comic image.
-
-    # TODO: Download the image
+    comicElem = soup.select('#comic img')
+    if comicElem == []:
+        print("Could not find comic image.")
+    else:
+        comicUrl = comicElem[0].get('src')
+        # TODO: Download the image
+        print(f"Downloading the image... {comicUrl}")
+        
+        res = requests.get(comicUrl)
+        res.raise_for_status()
 
     # TODO: Save the image to ./xkcd
 
