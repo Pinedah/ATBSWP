@@ -1,13 +1,22 @@
 #! python3
 # 6_downloadXdcd.py - Downloads every single XKCD Comic.
 
-import request, os, bs4
+import requests, os, bs4, logging
+
+logging.basicConfig(level = logging.DEBUG, format = '%(asctime)s -  %(levelname)s -   %(message)s')
+logging.disable(logging.CRITICAL)
 
 url = "https://xkcd.com/"
 os.makedirs('xkcd', exist_ok=True)
 
 while not url.endswith('#'):
     # TODO: Download the page
+    print(f"Downloading the page... {url}")
+    res = requests.get(url)
+    res.raise_for_status()
+
+    logging.info(res.text)
+    soup = bs4.BeautifulSoup(res.text)
 
     # TODO: Find the URL of the comic image.
 
