@@ -37,13 +37,12 @@ for i in range(5):
         res.raise_for_status()
 
         # Save the image to ./xkcd
-        imageFile = open(os.path.join('xkcd', os.path.basename(comicUrl)), 'wb')
-
-        """
+        imageFile = open(os.path.join('xkcd', os.path.basename(comicUrl)), 'wb') # opened in write binarymode
+    
         for chunk in res.iter_content(100000):
             imageFile.write(chunk)
         imageFile.close()
-        """
+        
 
     # Get the Prev button's url
     prevLink = soup.select('a[rel="prev"]')[0]
