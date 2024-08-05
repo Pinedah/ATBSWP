@@ -13,4 +13,7 @@ soup = bs4.BeautifulSoup(res.text, features='html.parser')
 
 # TODO: Open a browser tab for each result.
 linkElems = soup.select('.r a')
-
+numOpen = min(5, len(linkElems))
+for i in range(numOpen):
+    webbrowser.open('http://google.com' + linkElems[i].get('href'))
+    
