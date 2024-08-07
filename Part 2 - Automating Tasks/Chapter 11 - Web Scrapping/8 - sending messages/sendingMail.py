@@ -15,7 +15,7 @@ logging.basicConfig(level = logging.DEBUG, format = '%(asctime)s -  %(levelname)
 userEmail = 'papanacho.nacho@gmail.com'
 userPass = 'Papanacho12345'
 
-browser = webdriver.Chrome()
+browser = webdriver.Firefox()
 try:
     browser.get('http://gmail.com')
     
@@ -27,3 +27,11 @@ try:
 
 except NoSuchElementException:
     print("\nNope.")
+
+
+# Wait for user input before closing the browser
+input("Press Enter to close the browser...")
+# Close the browser
+browser.quit()
+
+# TODO: FIGURE OUT HOW TO ACCESS AUTOMATELY :(
