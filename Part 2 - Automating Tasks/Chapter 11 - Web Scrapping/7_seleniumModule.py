@@ -3,7 +3,7 @@
 
 from selenium import webdriver
 
-browser = webdriver.Firefox()
+browser = webdriver.Firefox() # can select any browser
 
 print(type(browser))
-browser.get('http://inventwithpython.com')
+browser.get('http://inventwithpython.com') # opens the page
